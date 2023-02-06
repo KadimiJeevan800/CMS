@@ -1,0 +1,57 @@
+.user-account
+{
+    display: flex;
+    flex-direction: row;
+    padding: 80px;
+    background-color: rgb(106, 184, 184);
+}
+.user-login
+{
+    flex-grow: 1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: rgb(89, 89, 234);
+    background-color: white;
+}
+.user-reg
+{
+    flex-grow: 1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgb(73, 73, 221);
+    color: white;
+}
+
+
+.user-account .form
+{
+    padding: 20px;
+    
+}
+.user-account input
+{
+    margin: 10px;
+}
+@media screen and (max-width:992px) {
+.user-account
+{
+    flex-direction: column;
+}
+#navbarSupportedContent
+{
+    border-top: 1px solid lightslategray;
+}
+.nav-item a{
+    border-bottom: 1px solid lightslategray;
+    width: 150px;
+    border-radius: 10%;
+}
+.navbar-nav 
+{
+    align-items: center;
+}
+
+.navbar-toggler
+{
+    padding: 0px 3px;
+}
+    
+}
