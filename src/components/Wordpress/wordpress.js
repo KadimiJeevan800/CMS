@@ -1,11 +1,12 @@
 import React from 'react'
 import record from './record.json'
-export default function wordpress() {
-
+import AddLinkIcon from '@mui/icons-material/AddLink';
+export default function wordpress(props) {
+//  console.log(props.record);
 
   return (
     <div>
-      <h4 className='bg-dark'>WordPress </h4>
+      <h4 className='bg-light text-dark'>WordPress </h4>
       <table className="table table-hover">
         <thead className="table-secondary">
           <tr>
@@ -18,12 +19,12 @@ export default function wordpress() {
       
           {/*Printing Wordpress json reocrd here  */}
           {
-          record.map(record=>{
+          props.record.map(record=>{
             return(
-              <tr>
+              <tr key={record.ID}>
               <td>{record.ID}</td>
               <td>{record.title}</td>
-              <td ><a className='btn btn-success ' href='https://www.tutorialspoint.com/wordpress/index.htm' target={'_blank'}>link</a></td>
+              <td ><a className='btn btn-success text-white ' href='https://www.tutorialspoint.com/wordpress/index.htm' target={'_blank'}>link <AddLinkIcon/> </a></td>
               </tr>
             );
           })

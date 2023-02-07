@@ -1,7 +1,13 @@
 import React from 'react'
+// import { prototype } from 'react-fontawesome';
 import { Outlet, Link } from "react-router-dom";
 import './header.css';
-export default function Header() {
+import PropTypes from 'prop-types'
+import AddAlertIcon from '@mui/icons-material/AddAlert';
+import FontAwesomeIcon from 'react-fontawesome';
+import HomeIcon from '@mui/icons-material/Home';
+import GiteIcon from '@mui/icons-material/Gite';
+export default function Header(props) {
   return (
     <header> 
     <div className='Header'>
@@ -87,7 +93,7 @@ export default function Header() {
         
         <div className='container-fluid'>
 
-        <Link className="navbar-brand hov" to="/"> CMS</Link>
+        <Link className="navbar-brand hov " to="/"> CMS</Link>
         <button
             className="navbar-toggler"
             type="button"
@@ -108,15 +114,18 @@ export default function Header() {
             <Link to="/Drupal" className="nav-link">Drupal</Link>
           </li>
           <li className="nav-item hov">
-            <Link to="/Magento" className="nav-link disabled">Magento</Link>
+            <Link to="/Magento" className="nav-link ">Magento</Link>
           </li>
           
         </ul>
-        
-    
         <span className='ml-1'>
-        <Link to="/Register" className='btn btn-primary'>User + </Link>
+        <Link to="/Register" className='btn btn-secondary text-white'>  {props.name} <GiteIcon/> </Link>
         </span>
+        <span className='ml-1'>
+        <Link to="/notification" className='btn '><AddAlertIcon/> </Link>
+        </span>
+
+        
         </div>
         </div>
       </nav>
@@ -126,4 +135,12 @@ export default function Header() {
     </div>
     </header>
   )
+}
+Header.defaultProps=
+{
+  name:"Alien"
+}
+Header.propTypes=
+{
+  name: PropTypes.string
 }

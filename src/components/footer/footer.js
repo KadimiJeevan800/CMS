@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faLinkedin, faYoutube, faInstagram ,faHouzz,faContao} from '@fortawesome/free-brands-svg-icons'
 import './footer.css'
 import './script.js';
-
+import BusinessIcon from '@mui/icons-material/Business';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 export default function footer() {
 
 
@@ -45,20 +47,20 @@ export default function footer() {
           <div className='cmp-info'>
             <span className='address'>
 
-            <FontAwesomeIcon icon={faHouzz} className="hov" /> 14th floor ,<br />GAR Laxmi Infobahn SEZ,<br /> Hyderabad, 500075
+           < BusinessIcon  className='hov'/> 14th floor ,<br />GAR Laxmi Infobahn SEZ,<br /> Hyderabad, 500075
             </span>
             <span className='contact-no'>
-            <FontAwesomeIcon icon={faContao} className="hov" /> 123456789
+           <ContactPhoneIcon  className='hov'/>  123456789
             </span>
             <span className='email'>
-              Itops@cms.in
+             <ContactMailIcon className='hov'/> Itops@cms.in
             </span>
           </div>
         </div>
       </div>
       <div className='footer-bottom'>
 
-        <div className='credits'>CC @{year} Content Management System . All Rights are Resereved</div>
+        <div className='credits'>CC &copy;{year} Content Management System . All Rights are Resereved</div>
         <div className='links '>
           <a className='hov' href='' id='cmp'>Company Contact</a>
           <a className='hov' href=''>Pirvacy Policy</a>
