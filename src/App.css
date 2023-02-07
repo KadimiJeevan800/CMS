@@ -44,3 +44,14 @@
 {
   padding: 30px;
 }
+
+
+.flexer
+{
+  display: flex;
+  flex-direction: row;
+}
+.flexer>*
+{
+  flex-grow: 1;
+}

@@ -1,6 +1,10 @@
+import 'devextreme/dist/css/dx.light.css';
 import React, { useState } from "react";
 // import './images/';
 import img1 from './images/drupal.jpg'
+import 'devextreme/dist/css/dx.light.css';
+import DrupalData from './components/Drupal/record.json';
+import WordPressData from './components/Wordpress/record.json';
 import img2 from './images/magento.png';
 import img3 from './images/wordpress.png';
 import ReactDOM from "react-dom/client";
@@ -19,16 +23,17 @@ import "./App.css";
 
 function App() {
   let Component;
+  // const [name,setname]=useState("Alien");
  switch(window.location.pathname)
  {
     case '/': 
-    Component=<Content />
+    Component=<Content name="Jeevan"/>
         break;
     case '/wordpress':    
-    Component=<Wordpress />
+    Component=<Wordpress  />
       break;
     case '/drupal':
-      Component=<Drupal />
+      Component=<Drupal  />
       break;  
  }
 
@@ -40,11 +45,11 @@ function App() {
 
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Header />}>
-          <Route index element={<Content />} />
-          <Route path="Wordpress" element={<Wordpress />} />
-          <Route path="Drupal" element={<Drupal />} />
-          <Route path="Magento" element={<Magento />} />
+        <Route path="/" element={<Header  />}>
+          <Route index element={<Content name=""/>} />
+          <Route path="Wordpress" element={<Wordpress record={WordPressData} />} />
+          <Route path="Drupal" element={<Drupal record={DrupalData} />} />
+          <Route path="Magento" element={<Magento  record={DrupalData}/>} />
           
           <Route path="Register" element={<Register />} />
 

@@ -1,8 +1,11 @@
 import React from 'react'
 import './content.css';
-
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 function content(props) {
-
+let cstyle=
+{
+  minHeight: "70vh",
+}
 // var myIndex = 0;
 // carousel();
 
@@ -19,8 +22,8 @@ function content(props) {
 // }
 
   return (
-    <section classNameName='content'>
-     <h3 className='text-info'>Welcome to CMS Tutorial Website</h3>
+    <section className='content' style={cstyle}>
+     <h3 className='text-info'>Welcome to CMS Tutorial Website {props.name}</h3>
 
      <p>
      A content management system, often abbreviated as CMS, is software that helps users create, manage, and modify content on a website without the need for specialized technical knowledge.
@@ -61,7 +64,7 @@ function content(props) {
 
       <div className='card '>
         <h3 className='text-success'>More Tools</h3>
-        <p>
+        <div>
           <ul>
             <li>Joomla</li>
             <li>Umbraco</li>
@@ -69,12 +72,18 @@ function content(props) {
             <li>Concrete CMs</li>
             <li className='text-Tertiary'>Many More</li>
           </ul>
-        </p>
+        </div>
       </div>
     </div>
 
-    <div className='get-started bg-primary'>
-1
+    <div className='get-started bg-warning text-warning'>
+        1
+    </div>
+    <div className='get-started bg-light text-primary'>
+        <AcUnitIcon/>
+    </div>
+    <div className='get-started bg-success text-success'>
+        3
     </div>
 
     </section>
