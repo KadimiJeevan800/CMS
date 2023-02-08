@@ -25,7 +25,7 @@ export default function Header(props) {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse text-center" id="navbarSupportedContent">
       <ul className=' navbar-nav me-auto mb-2 mb-lg-0'>
         <li  className="nav-item hov">
             <Link to="/Wordpress" className="nav-link" >WordPress</Link>
