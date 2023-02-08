@@ -1,6 +1,8 @@
 import 'devextreme/dist/css/dx.light.css';
 import React, { useState } from "react";
 // import './images/';
+import { Provider } from 'react-redux'
+// import store from './store'
 import img1 from './images/drupal.jpg'
 import 'devextreme/dist/css/dx.light.css';
 import DrupalData from './components/Drupal/record.json';
@@ -24,29 +26,30 @@ import "./App.css";
 function App() {
   let Component;
   // const [name,setname]=useState("Alien");
- switch(window.location.pathname)
- {
-    case '/': 
-    Component=<Content name="Jeevan"/>
-        break;
-    case '/wordpress':    
-    Component=<Wordpress  />
-      break;
-    case '/drupal':
-      Component=<Drupal  />
-      break;  
- }
+//  switch(window.location.pathname)
+//  {
+//     case '/': 
+//     Component=<Content name="Jeevan"/>
+//         break;
+//     case '/wordpress':    
+//     Component=<Wordpress  />
+//       break;
+//     case '/drupal':
+//       Component=<Drupal  />
+//       break;  
+//  }
 
   return (
-    <div className="App">
+    <div className="main">
       {/* <Header /> */}
       {/* <Content title="Content Works..." /> */}
       {/* {Component} */}
+    
 
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Header  />}>
-          <Route index element={<Content name=""/>} />
+          <Route index  element={<Content name="Jeevan"/>} />
           <Route path="Wordpress" element={<Wordpress record={WordPressData} />} />
           <Route path="Drupal" element={<Drupal record={DrupalData} />} />
           <Route path="Magento" element={<Magento  record={DrupalData}/>} />
