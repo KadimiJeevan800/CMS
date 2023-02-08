@@ -4,7 +4,7 @@ import './content/content.css';
 
 function NoPage(props) {
   return (
-    <div className='full-width'>
+    <div className='full-width text-center'>
       <h1>404 Error</h1>
       <h1>Page Not Found Error....</h1>
       <h1>Go to Homepage</h1>

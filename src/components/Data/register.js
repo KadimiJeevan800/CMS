@@ -19,7 +19,7 @@ let userData="";
   
     };
   return (
-    <div className='user-account'>
+    <div className='user-account text-center'>
         {/* Login Form */}
       <div className='user-login'>
         <div className='form'>

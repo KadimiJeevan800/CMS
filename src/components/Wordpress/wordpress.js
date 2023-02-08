@@ -2,10 +2,10 @@ import React from 'react'
 import record from './record.json'
 import AddLinkIcon from '@mui/icons-material/AddLink';
 export default function wordpress(props) {
-//  console.log(props.record);
+
 
   return (
-    <div>
+    <div className='text-center'>
       <h4 className='bg-light text-dark'>WordPress </h4>
       <table className="table table-hover">
         <thead className="table-secondary">

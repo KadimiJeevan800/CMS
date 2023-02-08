@@ -5,9 +5,9 @@ import { TreeList, Column,Sorting,Scrolling, Paging, Pager,SearchPanel,HeaderFil
 export default function drupal(props) {
   const expandedRowKeys = [1];
   const allowedPageSizes = [10, 15];
-// console.log(data);
+
   return (
-    <div>
+    <div  className='text-center'>
       <h4 className='bg-info text-dark'>Drupal</h4>
 
     {/* <table className="table table-hover" >
