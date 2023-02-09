@@ -5,7 +5,7 @@ export default function wordpress(props) {
 
 
   return (
-    <div className='text-center'>
+    <div className='text-center container'>
       <h4 className='bg-light text-dark'>WordPress </h4>
       <table className="table table-hover">
         <thead className="table-secondary">

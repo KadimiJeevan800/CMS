@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { Provider } from 'react-redux'
 // import store from './store'
 import img1 from './images/drupal.jpg'
+import Notification from './components/Notification';
+import Ekart from './components/Ekart/Ekart.js';
 import 'devextreme/dist/css/dx.light.css';
 import DrupalData from './components/Drupal/record.json';
 import WordPressData from './components/Wordpress/record.json';
@@ -53,9 +55,9 @@ function App() {
           <Route path="Wordpress" element={<Wordpress record={WordPressData} />} />
           <Route path="Drupal" element={<Drupal record={DrupalData} />} />
           <Route path="Magento" element={<Magento  record={DrupalData}/>} />
-          
+          <Route path="Ekart" element={<Ekart />} />
           <Route path="Register" element={<Register />} />
-
+          <Route path="Notification" element={<Notification />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
