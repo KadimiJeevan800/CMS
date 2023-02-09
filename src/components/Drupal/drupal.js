@@ -7,7 +7,7 @@ export default function drupal(props) {
   const allowedPageSizes = [10, 15];
 
   return (
-    <div  className='text-center'>
+    <div  className='text-center container' >
       <h4 className='bg-info text-dark'>Drupal</h4>
 
     {/* <table className="table table-hover" >

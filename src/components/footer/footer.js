@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faTwitter, faLinkedin, faYoutube, faInstagram ,faHouzz,faContao} from '@fortawesome/free-brands-svg-icons'
+import { faFacebook, faTwitter, faLinkedin, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import './footer.css'
 import './script.js';
 import BusinessIcon from '@mui/icons-material/Business';
@@ -12,7 +12,7 @@ export default function footer() {
   const d = new Date();
   let year = d.getFullYear();
   return (
-    <footer className='footer'>
+    <footer className='footer bg-black bg-gradient'>
       <div className='footer-top'>
         <div className='More-about-company'>
           <h4>More About Company</h4>
@@ -62,9 +62,9 @@ export default function footer() {
 
         <div className='credits'>CC &copy;{year} Content Management System . All Rights are Resereved</div>
         <div className='links '>
-          <a className='hov' href='' id='cmp'>Company Contact</a>
-          <a className='hov' href=''>Pirvacy Policy</a>
-          <a className='hov' href=''>Terms & Conditions</a>
+          <a className='hov' href='/Company-Contact' id='cmp'>Company Contact</a>
+          <a className='hov' href='/Pirvacy-Policy'>Pirvacy Policy</a>
+          <a className='hov' href='/Terms-Conditions'>Terms & Conditions</a>
         </div>
       </div>
     </footer>

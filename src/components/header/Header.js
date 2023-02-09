@@ -36,15 +36,24 @@ export default function Header(props) {
           <li className="nav-item hov">
             <Link to="/Magento" className="nav-link ">Magento</Link>
           </li>
+          <li className="nav-item hov">
+            <Link to="/Ekart" className="nav-link ">E-Store</Link>
+          </li>
           
         </ul>
-        <span className='ml-1'>
-        <Link to="/Register" className='btn btn-secondary text-white'>  {props.name} <GiteIcon/> </Link>
-        </span>
+      <div className='header-btns'>
         <span className='ml-1'>
         <Link to="/notification" className='btn '><AddAlertIcon/> </Link>
         </span>
-
+        <span className='ml-1'>
+        <Link to="/cart" className='btn '><span className="material-symbols-outlined">
+          shopping_cart
+        </span></Link>
+        </span>
+        <span className='ml-1'>
+          <Link to="/Register" className='btn btn-secondary text-white'>  {props.name} <GiteIcon/> </Link>
+        </span>
+      </div>
         
         </div>
         </div>
