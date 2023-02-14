@@ -90,8 +90,8 @@ const sayhello=()=>
  
     <Button text="Click me" onClick={sayhello} className="text-center" />
     <div className='mx-auto '>
-      <img src={datae.message} width="200px" height="200px " className='p-3 border border-primary'/> <br/>
-      <Button text="Fetch  " onClick={getDOg} className="text-center bg-warning text-dark border border-info " />
+      <img src={datae.message} width="200px" height="200px "  className='p-3 border border-primary'/> <br/>
+      <Button text="Fetch " onClick={getDOg} className="text-center  text-dark border border-dark mt-1 " />
     </div>
     
     <Chart dataSource={data}>

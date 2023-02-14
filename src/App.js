@@ -1,32 +1,34 @@
 import 'devextreme/dist/css/dx.light.css';
 import React, { useState } from "react";
 // import './images/';
-import { Provider } from 'react-redux'
+// import { Provider } from 'react-redux'
 // import store from './store'
 import img1 from './images/drupal.jpg'
-import Notification from './components/Notification';
-import Ekart from './components/Ekart/Ekart.js';
+import Cart from './pages/cart';
+import Ekart from './pages/Ekart/Ekart';
 import 'devextreme/dist/css/dx.light.css';
-import DrupalData from './components/Drupal/record.json';
-import WordPressData from './components/Wordpress/record.json';
+import DrupalData from './pages/Drupal/record.json';
+import WordPressData from './pages/Wordpress/record.json';
 import img2 from './images/magento.png';
 import img3 from './images/wordpress.png';
 import ReactDOM from "react-dom/client";
 import Header from "./components/header/Header";
 import Content from './components/content/content';
 import Footer from './components/footer/footer';
-import Wordpress from "./components/Wordpress/wordpress";
-import Drupal from './components/Drupal/drupal'
-import Magento from './components/Magento/Magento'
-import NoPage from './components/NoPage'
-
-import Register from './components/Data/register'
-
+import Wordpress from './pages/Wordpress/wordpress';
+import Drupal from './pages/Drupal/drupal';
+import Magento from './pages/Magento/Magento'
+import NoPage from './pages/NoPage'
+import Notification from './pages/Notification';
+import Register from './pages/Data/register'
+import d from './pages/Ekart/data';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
   let Component;
+  // console.log(d);
+  const [cartItems,setCartItems] = useState(0);
   // const [name,setname]=useState("Alien");
 //  switch(window.location.pathname)
 //  {
@@ -55,8 +57,9 @@ function App() {
           <Route path="Wordpress" element={<Wordpress record={WordPressData} />} />
           <Route path="Drupal" element={<Drupal record={DrupalData} />} />
           <Route path="Magento" element={<Magento  record={DrupalData}/>} />
-          <Route path="Ekart" element={<Ekart />} />
+          <Route path="Ekart" element={<Ekart cartItems={cartItems} setCartItems={setCartItems} />} />
           <Route path="Register" element={<Register />} />
+          <Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
           <Route path="Notification" element={<Notification />} />
           <Route path="*" element={<NoPage />} />
         </Route>
@@ -75,8 +78,6 @@ function App() {
         </a>
         
       </div>
-      
-      
       <Footer />
     </div>
   );
