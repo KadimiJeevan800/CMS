@@ -42,11 +42,18 @@ export default function Header(props) {
           
         </ul>
       <div className='header-btns'>
+      <span className='ml-1'>
+        <Link to="/user" className='btn '>
+          <span className="material-symbols-outlined">
+            group
+          </span>   
+        </Link>
+        </span>
         <span className='ml-1'>
         <Link to="/notification" className='btn '><AddAlertIcon/> </Link>
         </span>
-        <span className='ml-1'>
-        <Link to="/cart" className='btn '><span className="material-symbols-outlined">
+        <span className='ml-1' >
+        <Link to="/cart" className='btn '><span  id='cart-btn' className="material-symbols-outlined">
           shopping_cart
         </span></Link>
         </span>

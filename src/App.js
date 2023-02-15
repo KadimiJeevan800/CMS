@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // import './images/';
 // import { Provider } from 'react-redux'
 // import store from './store'
+import User from './users/user';
 import img1 from './images/drupal.jpg'
 import Cart from './pages/cart';
 import Ekart from './pages/Ekart/Ekart';
@@ -28,7 +29,9 @@ import "./App.css";
 function App() {
   let Component;
   // console.log(d);
-  const [cartItems,setCartItems] = useState(0);
+  const [cartItems,setCartItems] = useState([]);
+  const [CartDetails,setCartDetails]=useState([]);
+  
   // const [name,setname]=useState("Alien");
 //  switch(window.location.pathname)
 //  {
@@ -57,10 +60,11 @@ function App() {
           <Route path="Wordpress" element={<Wordpress record={WordPressData} />} />
           <Route path="Drupal" element={<Drupal record={DrupalData} />} />
           <Route path="Magento" element={<Magento  record={DrupalData}/>} />
-          <Route path="Ekart" element={<Ekart cartItems={cartItems} setCartItems={setCartItems} />} />
+          <Route path="Ekart" element={<Ekart cartItems={cartItems} setCartItems={setCartItems} CartDetails={CartDetails} setCartDetails={setCartDetails} />} />
           <Route path="Register" element={<Register />} />
-          <Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
+          <Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} CartDetails={CartDetails} setCartDetails={setCartDetails} />} />
           <Route path="Notification" element={<Notification />} />
+          <Route path="user" element={<User />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

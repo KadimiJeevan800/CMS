@@ -15,7 +15,7 @@ ul.prod
     border: 2px solid beige;
     background-color: rgb(204, 223, 223);
     font-family: 'math';
-    height: 500px;
+    height: 630px;
     display: grid;
 }
 ul.prod>*
@@ -28,4 +28,11 @@ ul.prod>*
     {
         grid-template-columns: 100%;
     }       
+}
+
+
+.cart-block
+{
+    margin-top: 30px;
+    padding: 0;
 }
