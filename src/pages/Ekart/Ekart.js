@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Ekart.css";
+import axios from "axios";
 import { Link } from "react-router-dom";
 // import data from './data.js';
 export default function Ekart(props) {
@@ -9,10 +10,36 @@ export default function Ekart(props) {
     color: "black",
     alignSelf: "center",
   };
+  
+  // debugger
+  // console.log(props.CartDetails);
+
+  function add(title,id,price)
+  {
+    // debugger
+    props.setCartItems([...props.cartItems,title]);
+    props.setCartDetails([...props.CartDetails,price])
+    // props.setCartDetails([...props.CartDetails,title,price]);
+    // props.setCartDetails([...props.CartDetails.CartTitle,title]);
+    // props.setCartDetails([...props.CartDetails.CartPrice,price]);
+    // console.log(props.CartDetails);
+
+    // document.getElementById('cart-btn').style.backgroundColor="blue";
+    document.getElementById('cart-btn').style.color="blue";
+    document.getElementById('cart-btn').innerText="add_shopping_cart";
+    document.getElementById("btn"+id).style.backgroundColor="red";
+    document.getElementById("btn"+id).classList.add="disabled";
+  //  console.log(id);
+  }
 
   const getProd = async () => {
-    const resp = await fetch("https://fakestoreapi.com/products");
-    setProd(await resp.json());
+    try {
+      const resp = await axios("https://fakestoreapi.com/products");
+      setProd(resp.data);
+      
+    } catch (error) {
+      console.log(error.message)
+    }
     // console.log(await resp.json());
   };
   // console.log(props.cartItems);
@@ -23,14 +50,19 @@ export default function Ekart(props) {
   return (
     <div className="Ekart container text-center">
       {/* Ekart Data */}
-      {prod.map((prod) => (
-        <div key={prod.id}>
-          <ul className="prod " id={prod.id}>
+    
+       
+      {
+    
+      prod.map((prod) => (
+        
+          <ul className="prod "  key={prod.id} id={prod.id}>
             <li style={cstyle}>
               <b>Item :</b> {prod.title}
             </li>
             <li>
               <Link to={`product/${prod.id}`}>
+
                 <img
                   src={prod.image}
                   alt="product-image"
@@ -38,13 +70,15 @@ export default function Ekart(props) {
                   width="100px"
                   height="100px"
                 />
+
               </Link>
             </li>
             <li>
               <b>Description : </b>
             </li>
             <li>
-              {prod.description}
+              
+              {prod.description}...
               {/* {console.log((prod.description.slice(0,200)))} */}
             </li>
             <li>
@@ -55,17 +89,21 @@ export default function Ekart(props) {
             <li>
               <button
                 className="btn btn-success"
-                id={prod.id}
-                // onClick={props.setCartItems(...props.cartItems, prod.id)}
-                // onClick={()=>setList(prod.id)}
+                id={`btn${prod.id}`}
+                // onClick={props.setCartItems(...props.cartItems, prod)}
+           
+                onClick={()=>add(prod.title,prod.id,prod.price)}
+                // onClick={()=>add(prod.title,prod.id,prod.price)}
+
+                // onClick={()=>add(prod.title)}  
               >
-                buy now
+                Add to Cart +
               </button>
             </li>
           </ul>
-        </div>
+        
       ))}
-
+   
       <span className="text-center text-white">
         <span className="material-symbols-outlined">local_shipping</span>
         For any items mail us &copy; jeevan.kadimi@innovasolutions.in
