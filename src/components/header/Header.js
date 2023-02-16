@@ -52,8 +52,8 @@ export default function Header(props) {
         <span className='ml-1'>
         <Link to="/notification" className='btn '><AddAlertIcon/> </Link>
         </span>
-        <span className='ml-1' >
-        <Link to="/cart" className='btn '><span  id='cart-btn' className="material-symbols-outlined">
+        <span className='ml-1 ' >
+        <Link to="/cart" className='btn  '><span  id='cart-btn' className="material-symbols-outlined">
           shopping_cart
         </span></Link>
         </span>
