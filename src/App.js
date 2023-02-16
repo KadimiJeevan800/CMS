@@ -31,6 +31,7 @@ function App() {
   // console.log(d);
   const [cartItems,setCartItems] = useState([]);
   const [CartDetails,setCartDetails]=useState([]);
+  const [cartData, setCartData] = useState([]);
   
   // const [name,setname]=useState("Alien");
 //  switch(window.location.pathname)
@@ -60,9 +61,9 @@ function App() {
           <Route path="Wordpress" element={<Wordpress record={WordPressData} />} />
           <Route path="Drupal" element={<Drupal record={DrupalData} />} />
           <Route path="Magento" element={<Magento  record={DrupalData}/>} />
-          <Route path="Ekart" element={<Ekart cartItems={cartItems} setCartItems={setCartItems} CartDetails={CartDetails} setCartDetails={setCartDetails} />} />
+          <Route path="Ekart" element={<Ekart cartItems={cartItems} cartData={cartData} setCartData={setCartData} setCartItems={setCartItems} CartDetails={CartDetails} setCartDetails={setCartDetails} />} />
           <Route path="Register" element={<Register />} />
-          <Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} CartDetails={CartDetails} setCartDetails={setCartDetails} />} />
+          <Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} cartData={cartData} setCartData={setCartData} CartDetails={CartDetails} setCartDetails={setCartDetails} />} />
           <Route path="Notification" element={<Notification />} />
           <Route path="user" element={<User />} />
           <Route path="*" element={<NoPage />} />

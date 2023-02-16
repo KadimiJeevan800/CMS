@@ -1,10 +1,14 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext } from 'react'
 
+export const UserContext = createContext();
+// export const ShopContext= createContext();
+const UserContextProvider = (props) => {
 
-export const ShopContext= createContext(null);
-const ShopContextProvider = (props) => {
-
-    return <ShopContextProvider>{props.children}</ShopContextProvider> 
+    return (
+        <UserContext.Provider value="alien">
+          
+        </UserContext.Provider>
+      )
 }
 
-export default  ShopContextProvider
+export default  UserContextProvider

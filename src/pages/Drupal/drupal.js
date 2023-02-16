@@ -66,8 +66,8 @@ export default function drupal(props) {
           dataField="title" caption="Topic" />
           <Column
           dataField="session" /> 
-        <Column
-          dataField="Link" />  
+        {/* <Column
+          dataField="Link" />   */}
      
       </TreeList>  
     

@@ -11,7 +11,7 @@ import reducer from './reducer';
 export default function Magento(props) {
  
   const initialize=5;
-
+  // const [work]
   const [state,dispatch]=useReducer(reducer,initialize);
   const [count,setCount]=useState(0);
   const [width,setWidth]=useState(window.screen.width);

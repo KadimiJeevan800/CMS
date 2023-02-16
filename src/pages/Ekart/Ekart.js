@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Ekart.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Loader from '../../components/loader';
 // import data from './data.js';
 export default function Ekart(props) {
   const [prod, setProd] = useState(["Welcome To E-Store"]);
@@ -17,18 +18,22 @@ export default function Ekart(props) {
   function add(title,id,price)
   {
     // debugger
-    props.setCartItems([...props.cartItems,title]);
-    props.setCartDetails([...props.CartDetails,price])
-    // props.setCartDetails([...props.CartDetails,title,price]);
-    // props.setCartDetails([...props.CartDetails.CartTitle,title]);
-    // props.setCartDetails([...props.CartDetails.CartPrice,price]);
+    let product = {
+      "title": title,
+      "price": price
+    }
+    props.setCartData([...props.cartData, product])
+    // props.setCartItems([...props.cartItems,title]);
+    // props.setCartDetails([...props.CartDetails,price])
+    
     // console.log(props.CartDetails);
 
     // document.getElementById('cart-btn').style.backgroundColor="blue";
     document.getElementById('cart-btn').style.color="blue";
     document.getElementById('cart-btn').innerText="add_shopping_cart";
-    document.getElementById("btn"+id).style.backgroundColor="red";
-    document.getElementById("btn"+id).classList.add="disabled";
+    // document.getElementById("btn"+id).style.backgroundColor="red";
+    document.getElementById("btn"+id).innerText="Added";
+    document.getElementById("btn"+id).style.cursor="not-allowed";
   //  console.log(id);
   }
 
@@ -48,12 +53,14 @@ export default function Ekart(props) {
   }, []);
 
   return (
+    <div className="container text-end">
+
+    { prod.length===1 ? <Loader/>:  
+    
     <div className="Ekart container text-center">
       {/* Ekart Data */}
-    
        
       {
-    
       prod.map((prod) => (
         
           <ul className="prod "  key={prod.id} id={prod.id}>
@@ -78,17 +85,17 @@ export default function Ekart(props) {
             </li>
             <li>
               
-              {prod.description}...
+              {prod.description.slice(0,200)}...
               {/* {console.log((prod.description.slice(0,200)))} */}
             </li>
             <li>
               <b>Price :</b>${prod.price}
             </li>
             {/* <li>{prod.rating.rate }</li> */}
-            {/* <li>{prod.rating.rate <3 ? "Low " : "HIgher"}</li> */}
+            <li>{prod.rating.rate <3 ? "Low " : "Higher"}</li>
             <li>
               <button
-                className="btn btn-success"
+                className="btn button"
                 id={`btn${prod.id}`}
                 // onClick={props.setCartItems(...props.cartItems, prod)}
            
@@ -114,6 +121,8 @@ export default function Ekart(props) {
         Happy Shopping
         <span className="material-symbols-outlined">storefront</span>
       </span>
+    </div>}
     </div>
+    
   );
 }
