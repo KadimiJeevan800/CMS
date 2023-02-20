@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Loader from '../../components/loader';
 // import data from './data.js';
 export default function Ekart(props) {
+
+  // const [prodata,setprodata]=useState([]);
   const [prod, setProd] = useState(["Welcome To E-Store"]);
   let cstyle = {
     background: "white",
@@ -14,26 +16,23 @@ export default function Ekart(props) {
   
   // debugger
   // console.log(props.CartDetails);
-
+  function addp(id)
+  {
+    props.setPid(id);  
+    console.log(id);
+  }
   function add(title,id,price)
   {
     // debugger
     let product = {
+      "id":id,
       "title": title,
       "price": price
     }
     props.setCartData([...props.cartData, product])
-    // props.setCartItems([...props.cartItems,title]);
-    // props.setCartDetails([...props.CartDetails,price])
-    
-    // console.log(props.CartDetails);
-
-    // document.getElementById('cart-btn').style.backgroundColor="blue";
-    document.getElementById('cart-btn').style.color="blue";
-    document.getElementById('cart-btn').innerText="add_shopping_cart";
-    // document.getElementById("btn"+id).style.backgroundColor="red";
+    // document.getElementById('cart-btn').style.color="blue";
     document.getElementById("btn"+id).innerText="Added";
-    document.getElementById("btn"+id).style.cursor="not-allowed";
+    document.getElementById("btn"+id).disabled = true;
   //  console.log(id);
   }
 
@@ -41,6 +40,7 @@ export default function Ekart(props) {
     try {
       const resp = await axios("https://fakestoreapi.com/products");
       setProd(resp.data);
+      // setprodata(resp.data)
       
     } catch (error) {
       console.log(error.message)
@@ -63,46 +63,34 @@ export default function Ekart(props) {
       {
       prod.map((prod) => (
         
-          <ul className="prod "  key={prod.id} id={prod.id}>
+          <ul className="prod"  key={prod.id} id={prod.id}>
             <li style={cstyle}>
               <b>Item :</b> {prod.title}
             </li>
             <li>
-              <Link to={`product/${prod.id}`}>
+              <Link to={`/product`}>
 
                 <img
                   src={prod.image}
                   alt="product-image"
                   className="border border-dark hov"
-                  width="100px"
-                  height="100px"
+                  width="60%"
+                  height="300px"
+                  onClick={()=>(addp(prod.id))}
                 />
 
               </Link>
             </li>
-            <li>
-              <b>Description : </b>
+            <li className="price">
+              <b>Price : ${prod.price}</b>
             </li>
-            <li>
-              
-              {prod.description.slice(0,200)}...
-              {/* {console.log((prod.description.slice(0,200)))} */}
-            </li>
-            <li>
-              <b>Price :</b>${prod.price}
-            </li>
-            {/* <li>{prod.rating.rate }</li> */}
-            <li>{prod.rating.rate <3 ? "Low " : "Higher"}</li>
             <li>
               <button
                 className="btn button"
                 id={`btn${prod.id}`}
                 // onClick={props.setCartItems(...props.cartItems, prod)}
-           
                 onClick={()=>add(prod.title,prod.id,prod.price)}
-                // onClick={()=>add(prod.title,prod.id,prod.price)}
-
-                // onClick={()=>add(prod.title)}  
+                // onClick={()=>add(prod.title,prod.id,prod.price)}  
               >
                 Add to Cart +
               </button>

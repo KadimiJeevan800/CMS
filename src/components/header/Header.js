@@ -55,7 +55,7 @@ export default function Header(props) {
         <span className='ml-1 ' >
         <Link to="/cart" className='btn  '><span  id='cart-btn' className="material-symbols-outlined">
           shopping_cart
-        </span></Link>
+        </span> <span className='cart-count'>{props.cartData.length}</span></Link>
         </span>
         <span className='ml-1'>
           <Link to="/Register" className='btn btn-secondary text-white'>  {props.name} <GiteIcon/> </Link>
