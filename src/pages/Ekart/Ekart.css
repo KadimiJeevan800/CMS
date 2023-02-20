@@ -7,7 +7,11 @@
     background-color: cadetblue;
     padding: 20px;
 }
-
+.sort-block p{
+  border-bottom: 2px solid ;
+  border-left: 2px solid;
+  border-right: 2px solid;
+}
 ul.prod
 {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -25,11 +29,15 @@ ul.prod>*
     margin: 5px;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:990px) {
     .Ekart
     {
         grid-template-columns: 100%;
     }       
+    .sort
+    {
+      display: none;
+    }
 }
 
 
@@ -119,8 +127,18 @@ ul.prod>*
 {
   padding: 30px;
 }
+.checked {
+  color: orange;
+}
 
-@media screen and (max-width:1000px) {
+.sort
+{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  max-width: 250px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width:1200px) {
   .product-item-details
   {
     flex-direction: column;

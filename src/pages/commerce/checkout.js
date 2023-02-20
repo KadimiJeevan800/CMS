@@ -1,8 +1,21 @@
+
 import React from 'react'
+import Home from '../../App'
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 export default function checkout(props) {
+
+  function fin()
+  {
+   alert("Order Placed.....");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  // const navigate = useNavigate();
+  //   navigate('/', { replace: true });
+  }
   return (
+    
     <div className='checkout-page container text-center mt-5'>
+      
         <div className='row'> 
           <div className='col-md-8  '>
             <h5>Confirm order and pay</h5>
@@ -44,13 +57,13 @@ export default function checkout(props) {
           <div className='col-md-4  mt-5 mt-5'>
             <div className='bg-success text-white p-3'> 
               <span>You have to pay</span> <br/>
-              <span className='checkout-price-data bg-dark text-white p-1'>$<b>{props.checkoutData}</b></span> 
+              <span className='checkout-price-data bg-dark border border-warning  text-white p-1'>$<b>{props.checkoutData}</b></span> 
                 <br/>
               <span>
                 Enjoy all the features and perk after you complete the payment
               </span>
               <br/>
-              <span>
+              <span className='hov'>
                 Know all the features
               </span>
               <br/>
@@ -58,7 +71,7 @@ export default function checkout(props) {
                 100% Guaranteed support and update for the next 5 years.
               </span> <br/>
               <span>
-                <button className='btn button border-dark' onClick={()=>(alert("order placed.."))}>Pay Now</button>
+                <button className='btn button border-dark' onClick={()=>(fin())}>Pay Now</button>
               </span>
             </div>
           </div> 

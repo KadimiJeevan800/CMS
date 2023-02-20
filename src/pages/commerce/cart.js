@@ -1,4 +1,5 @@
 import React from "react";
+import './commerce.css';
 import { Link } from "react-router-dom";
 export default function cart(props) {
   // debugger
@@ -30,10 +31,7 @@ export default function cart(props) {
         props.setCartData([...props.cartData])
         // console.log(item)
       }
-      else
-      {
-        
-      }
+    
       
     });
     // props.cartData.forEach(item => {
@@ -62,13 +60,13 @@ export default function cart(props) {
 
 
      { props.cartData.length===0 ? 
-     <div>
+     <div className="p-5">
       <marquee direction="right"  >
       <span className="material-symbols-outlined">
         garden_cart
       </span>
       </marquee>
-      <span> No Cart Items</span>
+      <span  id="no-cart"> No Cart Items</span>
       <marquee direction="left">  
       <span className="material-symbols-outlined">
         garden_cart
@@ -79,6 +77,7 @@ export default function cart(props) {
           <tr className="bg-dark text-white">
             <th>ITEM TITLE</th>
             <th>ITEM PRICE</th>
+            <th>Quantity</th>
             <th>ACTION</th>
           </tr>
         </thead>
@@ -88,7 +87,8 @@ export default function cart(props) {
 
           <tr id={props.cartData.id} key={props.cartData.id}>
             <td>{data.title}</td>
-            <td>{data.price}</td>
+            <td>${data.price}</td>
+            <td>1</td>
             <td >
               <button id={data.id}  className="btn btn-danger" onClick={()=>(toDelete(data.id))} >Remove</button>
             </td>
@@ -97,15 +97,15 @@ export default function cart(props) {
       }
 
       <tr className="bg-dark text-white hov">
-        <td>Total {i} Items  Cost</td>
+        <td  colSpan='2'>Total {i} Items  Cost</td>
         <td colSpan='2'>${Total}.00</td>
       </tr>
       <tr className="bg-dark text-white">
-        <td >GST %</td>
+        <td  colSpan='2'>GST %</td>
         <td colSpan='2'>{gst}%</td>
       </tr>
       <tr className="bg-dark text-white">
-        <td >Total  Cost</td>
+        <td  colSpan='2'>Total  Cost</td>
         <td colSpan='2'>${gtot}</td>
       </tr>
       </tbody>
