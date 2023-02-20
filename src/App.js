@@ -3,9 +3,12 @@ import React, { useState } from "react";
 // import './images/';
 // import { Provider } from 'react-redux'
 // import store from './store'
+
+import Product from './pages/Ekart/product';
 import User from './users/user';
 import img1 from './images/drupal.jpg'
-import Cart from './pages/cart';
+import Cart from './pages/commerce/cart';
+import Checkout from './pages/commerce/checkout';
 import Ekart from './pages/Ekart/Ekart';
 import 'devextreme/dist/css/dx.light.css';
 import DrupalData from './pages/Drupal/record.json';
@@ -29,10 +32,10 @@ import "./App.css";
 function App() {
   let Component;
   // console.log(d);
-  const [cartItems,setCartItems] = useState([]);
-  const [CartDetails,setCartDetails]=useState([]);
+  const [checkoutData,setCheckoutData]=useState(0);
   const [cartData, setCartData] = useState([]);
-  
+
+  const [pid,setPid]=useState(0);
   // const [name,setname]=useState("Alien");
 //  switch(window.location.pathname)
 //  {
@@ -56,16 +59,18 @@ function App() {
 
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Header  />}>
+        <Route path="/" element={<Header   cartData={cartData}/>}>
           <Route index  element={<Content name="Jeevan"/>} />
           <Route path="Wordpress" element={<Wordpress record={WordPressData} />} />
           <Route path="Drupal" element={<Drupal record={DrupalData} />} />
           <Route path="Magento" element={<Magento  record={DrupalData}/>} />
-          <Route path="Ekart" element={<Ekart cartItems={cartItems} cartData={cartData} setCartData={setCartData} setCartItems={setCartItems} CartDetails={CartDetails} setCartDetails={setCartDetails} />} />
+          <Route path="Ekart" element={<Ekart  pid={pid} setPid={setPid} cartData={cartData} setCartData={setCartData}  />} />
           <Route path="Register" element={<Register />} />
-          <Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} cartData={cartData} setCartData={setCartData} CartDetails={CartDetails} setCartDetails={setCartDetails} />} />
+          <Route path="cart" element={<Cart  cartData={cartData} setCartData={setCartData} checkoutData={checkoutData}  setCheckoutData={setCheckoutData} />} />
           <Route path="Notification" element={<Notification />} />
           <Route path="user" element={<User />} />
+          <Route path="product" element={<Product pid={pid} setPid={setPid} />} />
+          <Route path="checkout" element={<Checkout  checkoutData={checkoutData}  setCheckoutData={setCheckoutData} />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

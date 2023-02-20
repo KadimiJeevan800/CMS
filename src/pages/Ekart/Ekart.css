@@ -17,6 +17,8 @@ ul.prod
     font-family: 'math';
     height: 500px;
     display: grid;
+    border-radius: 10px;
+    /* grid-gap: 10px; */
 }
 ul.prod>*
 {
@@ -100,4 +102,27 @@ ul.prod>*
     background-color: #EEEEEE;
     color: #222831;
     transition: 0.5s;
+}
+
+.cart-count
+{
+  position: relative;
+  bottom: 20px;
+  right: 6px;
+}
+.product-item-details
+{
+  display: flex;
+  padding: 30px;
+}
+.product-det
+{
+  padding: 30px;
+}
+
+@media screen and (max-width:1000px) {
+  .product-item-details
+  {
+    flex-direction: column;
+  }
 }

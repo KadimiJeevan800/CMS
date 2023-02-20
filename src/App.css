@@ -76,12 +76,34 @@
   text-align: center;
   margin:10% 50%;
 }
-.payment
+
+
+/* .cart-page
 {
-  display: flex;
-}
-.payment span
+  box-shadow: ;
+} */
+
+table .cart-table
 {
-  margin-left: 25px;
+  width:100%;
 }
 
+
+
+
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
+}
