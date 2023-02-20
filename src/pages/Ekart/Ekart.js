@@ -3,6 +3,8 @@ import "./Ekart.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loader from '../../components/loader';
+import Sort from "./Sort";
+
 // import data from './data.js';
 export default function Ekart(props) {
 
@@ -19,7 +21,7 @@ export default function Ekart(props) {
   function addp(id)
   {
     props.setPid(id);  
-    console.log(id);
+    
   }
   function add(title,id,price)
   {
@@ -53,13 +55,13 @@ export default function Ekart(props) {
   }, []);
 
   return (
-    <div className="container text-end">
+    <div className="container bg-light text-center">
 
     { prod.length===1 ? <Loader/>:  
-    
-    <div className="Ekart container text-center">
+ 
+    <div className="Ekart container ">
       {/* Ekart Data */}
-       
+      
       {
       prod.map((prod) => (
         
@@ -72,17 +74,17 @@ export default function Ekart(props) {
 
                 <img
                   src={prod.image}
-                  alt="product-image"
+                  alt="product-img"
                   className="border border-dark hov"
-                  width="60%"
-                  height="300px"
+                  width="250px"
+                  height="250px"
                   onClick={()=>(addp(prod.id))}
                 />
 
               </Link>
             </li>
             <li className="price">
-              <b>Price : ${prod.price}</b>
+              <b>Price : $ </b>{prod.price}
             </li>
             <li>
               <button
@@ -109,7 +111,8 @@ export default function Ekart(props) {
         Happy Shopping
         <span className="material-symbols-outlined">storefront</span>
       </span>
-    </div>}
+    </div>
+    }
     </div>
     
   );
