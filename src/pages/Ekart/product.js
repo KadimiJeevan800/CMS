@@ -14,10 +14,11 @@ export default function Product(props) {
       );
       setData(resp.data);
       // setTimeout(console.log(data.rating.rate),3000);
-      console.log(resp.data.rating.rate);
-      for(let i=0;i<5;i++)
+      // console.log(resp.data.rating.rate+" : "+Math.round(resp.data.rating.rate));
+      for(let i=1;i<=Math.round(resp.data.rating.rate);i++)
       {
-        document.getElementById("star").innerHTML=`<span className="fa fa-star checked"></span>`;
+        document.getElementById(`s${i}`).classList.add('checked');
+        // console.log(i)
       }
 
 
@@ -30,6 +31,9 @@ export default function Product(props) {
   useEffect(() => {
     getProd();
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   // getProd();
   // console.log(data.rating.rate);
   return (
@@ -43,7 +47,7 @@ export default function Product(props) {
       <div className="product-item-details container mt-3 border border-dark">
        
         <div>
-            <img src={data.image} alt="product-img " width="450px" height="400px"  />
+            <img src={data.image} alt="product-img " width="30%" height="30%"  />
                 
         </div>
         <div className="text-start product-det">
@@ -53,18 +57,16 @@ export default function Product(props) {
             <div><b>Description : </b>{data.description}</div>
             <div><b>Category : </b>{data.category}</div>
             <div>
-              <b>Rating : </b>{data.rating.rate} &nbsp;
-              {/* {for(let i=0;i<data.rating.rate)} */}
-              <div id="star"></div>
-              <span className="fa fa-star checked"></span> 
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>  
-              <span className="fa fa-star"></span>
+              <b>Rating : </b>
+              <span className="fa fa-star " id="s1"></span> 
+              <span className="fa fa-star "  id="s2"></span>
+              <span className="fa fa-star "  id="s3"></span>
+              <span className="fa fa-star "  id="s4"></span>  
+              <span className="fa fa-star"  id="s5"></span >
             </div>
-            <div><b>Stock (Available) : </b>{data.rating.count}</div>
+            <div><b>In Stock  : </b>{data.rating.count}</div>
             <div><b>Review : </b> <br/>
-            <textarea rows="4" cols="50">
+            <textarea rows="4" cols="50" placeholder="Give your Feedback.....">
 
             </textarea>
             </div>
