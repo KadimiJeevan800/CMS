@@ -1,10 +1,13 @@
-import React from "react";
+import React,{useEffect} from "react";
 import './commerce.css';
 import { Link } from "react-router-dom";
 export default function cart(props) {
   // debugger
   // console.log(props.CartDetails);
-
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   // console.log(window.location.href); 
   let count = 0;
@@ -41,22 +44,10 @@ export default function cart(props) {
     // });
   }
 
-  // console.log(props.cartData);
-  // if(props.cartData.length!==0)
-  // {
-  //   document.getElementById('cart-btn').style.color="blue";
-  //   document.getElementById('cart-btn').innerText="add_shopping_cart";
-  // }
-  // else
-  // {
-  //   document.getElementById('cart-btn').style.color="black";
-  //   document.getElementById('cart-btn').innerText="shopping_cart";
-  // }
 
-  // console.log(count);
   return (
     <div className="container cart-page bg-light">
-    <div className="container  text-center bg-light border border-dark cart-block">
+    <div className="container  text-center bg-light cart-block">
 
 
      { props.cartData.length===0 ? 

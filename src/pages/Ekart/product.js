@@ -31,6 +31,9 @@ export default function Product(props) {
   useEffect(() => {
     getProd();
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   // getProd();
   // console.log(data.rating.rate);
   return (
@@ -44,7 +47,7 @@ export default function Product(props) {
       <div className="product-item-details container mt-3 border border-dark">
        
         <div>
-            <img src={data.image} alt="product-img " width="450px" height="400px"  />
+            <img src={data.image} alt="product-img " width="30%" height="30%"  />
                 
         </div>
         <div className="text-start product-det">
@@ -55,8 +58,6 @@ export default function Product(props) {
             <div><b>Category : </b>{data.category}</div>
             <div>
               <b>Rating : </b>
-              {/* {for(let i=0;i<data.rating.rate)} */}
-              
               <span className="fa fa-star " id="s1"></span> 
               <span className="fa fa-star "  id="s2"></span>
               <span className="fa fa-star "  id="s3"></span>

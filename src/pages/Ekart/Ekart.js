@@ -57,8 +57,10 @@ export default function Ekart(props) {
   return (
     <div className="container bg-light text-center">
 
+      {prod.length===1 ? "Loading .... " :<div className="bg-light mt-3">Your <Link to="/cart" className="btn button">Cart</Link></div>}
+     
     { prod.length===1 ? <Loader/>:  
- 
+  
     <div className="Ekart container ">
       {/* Ekart Data */}
       
