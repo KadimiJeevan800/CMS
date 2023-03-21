@@ -57,7 +57,7 @@ export default function cart(props) {
         garden_cart
       </span>
       </marquee>
-      <span  id="no-cart"> No Cart Items</span>
+      <span  id="no-cart"> No Items</span>
       <marquee direction="left">  
       <span className="material-symbols-outlined">
         garden_cart
@@ -79,7 +79,7 @@ export default function cart(props) {
           <tr id={props.cartData.id} key={props.cartData.id}>
             <td>{data.title}</td>
             <td>${data.price}</td>
-            <td>1</td>
+            <td>1 </td>
             <td >
               <button id={data.id}  className="btn btn-danger" onClick={()=>(toDelete(data.id))} >Remove</button>
             </td>
